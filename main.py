@@ -13,17 +13,17 @@ def show_dice_gif(result):
     if os.path.exists(gif_full_path):
         st.image(gif_full_path, use_container_width=True)
     else:
-        st.error(f"GIF não encontrado para o número {result}")
+        st.error(f"GIF not found for {result}")
 
 def main():
-    st.title("🎲 Simulador de Dados")
+    st.title("🎲 Dice Simulator")
     
-    if st.button("Jogar Dado"):
-        with st.spinner("Rolando o dado..."):
+    if st.button("Throw the Dice"):
+        with st.spinner("Spinning the Dice..."):
             time.sleep(1)
             result = roll_dice()
             show_dice_gif(result)
-            st.success(f"Você rolou um {result}!")
+            st.success(f"You earned a {result}!")
 
 if __name__ == "__main__":
     main()
